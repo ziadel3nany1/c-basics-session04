@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.Intrinsics.X86;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 class Program
@@ -34,6 +35,18 @@ class Program
     {
         double[] newArray = { 10.0, 12.5, 15.0 };
         prices = newArray;
+    }
+    static bool TryGetPrice(string title, out double price)
+    {
+        if (title == "Clean Code")
+        {
+            price = 25.5;
+            return true;
+        }else
+        {
+            price = 0;
+            return false;
+        }
     }
     public static void Main()
     {
@@ -107,6 +120,19 @@ class Program
         ReplaceArray( ref prices03);
         Console.WriteLine(prices03.Length); //3
 
+        #endregion
+
+        #region Question 9
+        // 9.Write a method bool TryGetPrice(string title, out double price) that returns true and sets
+        //price to 25.5 if title is "Clean Code", otherwise returns false and sets price to 0.Call it
+        //and print the price if found
+
+        string title = "Clean Code";
+        bool isThere = TryGetPrice(title, out double price);
+        if (isThere)
+            Console.WriteLine(price);
+        else
+            Console.WriteLine("Not Found");
         #endregion
 
 
