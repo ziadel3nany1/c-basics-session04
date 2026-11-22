@@ -54,6 +54,13 @@ class Program
     {
         Console.WriteLine($"Title: {title}, Pages: {pages}");
     }
+    static void PrintAllTitles(params string[] titles)
+    {
+        for(int i = 0; i < titles.Length; i++)
+        {
+            Console.WriteLine(titles[i]);
+        }
+    }
     public static void Main()
     {
         #region Question 1
@@ -154,7 +161,12 @@ class Program
         PrintBookInfo(pages: 500, title: "Clean Code");
         #endregion
 
-        
+        #region Question 12
+        // 12.Write a method PrintAllTitles(params string[] titles) that prints each title on its own line.
+        //Call it with three book titles
+        string[] titles = {"Clean Code","C# Basics", "Logic Design" };
+        PrintAllTitles(titles);
+        #endregion
 
     }
 }
