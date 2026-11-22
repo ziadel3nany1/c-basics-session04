@@ -1,8 +1,14 @@
 ﻿using System;
+using System.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 class Program
 {
+    static void PrintWelcomeMessage()
+    {
+        Console.WriteLine("Welcome to the Library!");
+    }
+
     public static void Main()
     {
         #region Question 1
@@ -21,6 +27,13 @@ class Program
         int[,] shelfCopies = { {3,5 } , {1,4 } };
         Console.WriteLine(shelfCopies[1,0]);
 
+        #endregion
+
+        #region Question 3
+
+        //3.Write a method called PrintWelcomeMessage that takes no parameters and prints
+        //"Welcome to the Library!".Call it from Main.
+        PrintWelcomeMessage();
         #endregion
 
 
