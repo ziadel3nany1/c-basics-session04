@@ -48,6 +48,11 @@ class Program
             return false;
         }
     }
+
+    static void PrintBookInfo(string title, int pages = 300)
+    {
+        Console.WriteLine($"Title: {title}, Pages: {pages}");
+    }
     public static void Main()
     {
         #region Question 1
@@ -133,6 +138,13 @@ class Program
             Console.WriteLine(price);
         else
             Console.WriteLine("Not Found");
+        #endregion
+
+        #region Question 10
+        // 10.Write a method PrintBookInfo(string title, int pages = 300) where pages is optional. Call
+        //it once with only a title, and once passing both a title and pages.
+        PrintBookInfo("Clean Code");
+        PrintBookInfo("Clean Code",500);
         #endregion
 
 
