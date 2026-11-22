@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 class Program
@@ -12,6 +13,11 @@ class Program
     static void PrintBookTitle(string title) 
     {
         Console.WriteLine($"Book Title: {title}.");
+    }
+
+    static void AddBonusPages(int pages)
+    {
+        pages+= 50;
     }
     public static void Main()
     {
@@ -45,6 +51,16 @@ class Program
         //4.Write a method PrintBookTitle(string title) that prints "Book title: " + title. Call it with
         //"Clean Code".
         PrintBookTitle("Clean Code");
+        #endregion
+
+        #region Question 5
+
+        //5.Write a method AddBonusPages(int pages) that adds 50 to pages. Call it with a variable
+        //int pages = 400; and print pages afterward. What do you expect to see, and why?
+
+        int pages = 400;
+        AddBonusPages(pages);
+        Console.WriteLine(pages); //400 because what happend in the function does not affect outside the function
         #endregion
 
 
