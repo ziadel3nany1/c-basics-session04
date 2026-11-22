@@ -20,6 +20,10 @@ class Program
     {
         pages+= 50;
     }
+    static void AddBonusPages(ref int pages)
+    {
+        pages+= 50;
+    }
 
     static void ApplyDiscount(double[] prices)
     {
@@ -77,6 +81,15 @@ class Program
         double[] prices02 = { 25.5, 40.0 };
         ApplyDiscount(prices02);
         Console.WriteLine(prices02[0]); // 20.5 because arrays are reference types
+
+        #endregion
+
+        #region Question 7
+        // 7. Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref.
+        //Call it and print pages afterward. How is the result different from question 5 ?
+        pages = 400;
+        AddBonusPages(ref pages);
+        Console.WriteLine(pages); // 450 because ref passes the original variable by reference.
 
         #endregion
 
