@@ -9,6 +9,10 @@ class Program
         Console.WriteLine("Welcome to the Library!");
     }
 
+    static void PrintBookTitle(string title) 
+    {
+        Console.WriteLine($"Book Title: {title}.");
+    }
     public static void Main()
     {
         #region Question 1
@@ -35,6 +39,14 @@ class Program
         //"Welcome to the Library!".Call it from Main.
         PrintWelcomeMessage();
         #endregion
+
+        #region Question 4
+
+        //4.Write a method PrintBookTitle(string title) that prints "Book title: " + title. Call it with
+        //"Clean Code".
+        PrintBookTitle("Clean Code");
+        #endregion
+
 
 
     }
