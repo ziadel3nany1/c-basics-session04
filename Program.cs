@@ -29,6 +29,12 @@ class Program
     {
         prices[0] -= 5;
     }
+
+    static void ReplaceArray(ref double[] prices)
+    {
+        double[] newArray = { 10.0, 12.5, 15.0 };
+        prices = newArray;
+    }
     public static void Main()
     {
         #region Question 1
@@ -90,6 +96,16 @@ class Program
         pages = 400;
         AddBonusPages(ref pages);
         Console.WriteLine(pages); // 450 because ref passes the original variable by reference.
+
+        #endregion
+
+        #region Question 8
+        // 8.Write a method ReplaceArray(ref double[] prices) that replaces prices entirely with a
+        //new array { 10.0, 12.5, 15.0 }.Call it with your prices array and print prices.Length
+        //afterward.
+        double[] prices03 = { 99.6 , 78.1 ,55.2 , 40.0 };
+        ReplaceArray( ref prices03);
+        Console.WriteLine(prices03.Length); //3
 
         #endregion
 
