@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.Intrinsics.X86;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -18,6 +19,11 @@ class Program
     static void AddBonusPages(int pages)
     {
         pages+= 50;
+    }
+
+    static void ApplyDiscount(double[] prices)
+    {
+        prices[0] -= 5;
     }
     public static void Main()
     {
@@ -61,6 +67,17 @@ class Program
         int pages = 400;
         AddBonusPages(pages);
         Console.WriteLine(pages); //400 because what happend in the function does not affect outside the function
+        #endregion
+
+        #region Question 6
+        //Write a method ApplyDiscount(double[] prices) that subtracts 5 from prices[0].Call it
+        //with double[] prices = { 25.5, 40.0 }; and print prices[0] afterward.What do you expect to 
+        //see, and why?
+
+        double[] prices02 = { 25.5, 40.0 };
+        ApplyDiscount(prices02);
+        Console.WriteLine(prices02[0]); // 20.5 because arrays are reference types
+
         #endregion
 
 
